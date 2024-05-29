@@ -1,0 +1,69 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "solarized-dark"
+[theme.overrides]
+idle_bg = "#123456"
+idle_fg = "#abcdef"
+
+[icons]
+icons = "awesome4"
+[icons.overrides]
+bat = ["", "", "", ""]
+bat_charging = ""
+
+[[block]]
+block = "focused_window"
+[block.format]
+full = " $title.str(max_w:45) |"
+short = " $title.str(max_w:10) |"
+
+[[block]]
+block = "cpu"
+info_cpu = 20
+warning_cpu = 50
+critical_cpu = 90
+
+[[block]]
+block = "temperature"
+format = " $icon $max cpu "
+#format_alt = " $icon $min min, $max max, $average avg "
+interval = 5
+chip = "*-isa-*"
+
+[[block]]
+block = "net"
+format = " $icon {$signal_strength $ip|Wired connection}"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = " $icon root: $available.eng(w:2) "
+
+[[block]]
+block = "memory"
+format = "  $mem_used.eng(u:B, w:4) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+interval = 1
+
+[[block]]
+block = "battery"
+format = " $icon $percentage "
+
+[[block]]
+block = "sound"
+max_vol = 120
+
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+
+[[block]]
+block = "time"
+interval = 1
+format = " $timestamp.datetime(f:'%A %d %B - %T') "
