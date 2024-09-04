@@ -54,6 +54,7 @@ interval = 1
 [[block]]
 block = "battery"
 format = " $icon $percentage "
+full_format = "$icon full "
 
 [[block]]
 block = "sound"

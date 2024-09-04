@@ -38,12 +38,16 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ru -variant phonetic"
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf 
 
+# keep rofi in ram to open it quicker
+#exec --no-startup-id vmtouch -dl /usr/bin/rofi
+
 bindsym Print exec --no-startup-id "flameshot gui"
 bindsym Shift+Print exec --no-startup-id "flameshot screen"
 bindsym --release $mod+k exec --no-startup-id "xkill"
 bindsym $mod+l exec --no-startup-id i3lock -c 000000
 bindsym $mod+z exec --no-startup-id thunar
 bindsym $mod+o exec --no-startup-id rofimoji 
+bindsym $mod+c exec --no-startup-id ~/scripts/picom.sh
 
 default_border pixel 0
 default_floating_border pixel 0
@@ -62,11 +66,14 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 10%+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-for_window [class="Thunar" instance="thunar"] floating enable
+for_window [class="*Thunar" instance="thunar"] floating enable
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 for_window [class="iwgtk"] floating enable
 for_window [class="feh" instance="feh"] floating enable
-
+for_window [class="Smoothie" instance="smoothie"] floating enable
+for_window [class="Alacritty"] floating enable
+for_window [class="pwdKeeper.py"] floating enable
+for_window [class="Image Lounge" instance="nomacs"] floating enable
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
