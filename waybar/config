@@ -23,13 +23,15 @@
         "on-scroll-down": "hyprctl dispatch workspace e-1",
     },
     "hyprland/window": {
-        "format": "{}"
+        "format": "{}",
+        "max-length": 150,
     },
 	"network": {
 		"tooltip": false,
-		"format-wifi": "   {ipaddr}",
+		"format-wifi": "   {ipaddr}     {bandwidthDownBytes}",
 		"format-disconnected": "disconnected",
-		"on-click": "iwgtk"
+		"on-click": "iwgtk",
+		"interval": 2,
 	},
 	"tray":{
 		"icon-size":18,
@@ -40,9 +42,8 @@
         "tooltip": false,
     },
     "cpu": {
-        "interval": 3,
-        "format": "  {}%",
-        "max-length": 100
+        "interval": 5,
+        "format": "  {}%"
     },
     "memory": {
         "interval": 4,
@@ -50,7 +51,7 @@
         "max-length": 10
     },
 	"disk": {
-		"interval": 15,
+		"interval": 5,
 		"format": "  {specific_free:0.2f}GB",
 		"unit": "GB"
 	}
