@@ -1,6 +1,6 @@
 {
 	"layer": "top",
-	"modules-left": ["cpu", "memory", "disk", "tray", "hyprland/workspaces"],
+	"modules-left": ["custom/launcher", "cpu", "memory", "disk", "tray", "hyprland/workspaces"],
 	"modules-center": ["hyprland/window"],
 	"modules-right": ["network", "pulseaudio","clock"],
 
@@ -10,6 +10,7 @@
 		"format": "{icon}  {volume}%",
 		"format-muted": " muted",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click-middle": "pavucontrol",
 		"format-icons": {
 			"default": ["", "", ""],
 			"headphone": " ",
@@ -54,5 +55,10 @@
 		"interval": 5,
 		"format": "  {specific_free:0.2f}GB",
 		"unit": "GB"
+	},
+	"custom/launcher": {
+		"format": " ",
+		"on-click": "wofi --show drun --allow-images -i -a",
+		"tooltip": false
 	}
 }
