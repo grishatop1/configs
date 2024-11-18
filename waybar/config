@@ -1,9 +1,8 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher", "cpu", "memory", "disk", "tray", "hyprland/workspaces"],
+	"modules-left": ["cpu", "memory", "disk", "hyprland/language", "tray", "hyprland/workspaces"],
 	"modules-center": ["hyprland/window"],
 	"modules-right": ["network", "pulseaudio","clock"],
-
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
@@ -17,7 +16,6 @@
 			"headset": ""
 		},
 	},
-
 	"hyprland/workspaces": {
         "format": "{icon}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
@@ -25,7 +23,7 @@
     },
     "hyprland/window": {
         "format": "{}",
-        "max-length": 150,
+        "max-length": 65,
     },
 	"network": {
 		"tooltip": false,
@@ -33,6 +31,13 @@
 		"format-disconnected": "disconnected",
 		"on-click": "iwgtk",
 		"interval": 2,
+	},
+	"hyprland/language": {
+		"format": " {}",
+		"format-en": "usa",
+		"format-ru": "rus",
+		"format-sr": "srb",
+		"format-rs": "srb"
 	},
 	"tray":{
 		"icon-size":18,
@@ -44,16 +49,16 @@
     },
     "cpu": {
         "interval": 5,
-        "format": "  {}%"
+        "format": "  {}%"
     },
     "memory": {
         "interval": 4,
-        "format": " {}%",
+        "format": "   {}%",
         "max-length": 10
     },
 	"disk": {
 		"interval": 5,
-		"format": "  {specific_free:0.2f}GB",
+		"format": "󰋊 {specific_free:0.2f}GB",
 		"unit": "GB"
 	},
 	"custom/launcher": {
